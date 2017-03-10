@@ -12,6 +12,7 @@ class SpaceShip(Sprite):
 
     def __init__(self, position):
         super().__init__(SpaceShip.asset, position)
+        
 class SpaceGame(App):
     """
     Tutorial4 space game example.
@@ -22,9 +23,10 @@ class SpaceGame(App):
         noline = LineStyle(0, black)
         bg_asset = RectangleAsset(SCREEN_WIDTH, SCREEN_HEIGHT, noline, black)
         bg = Sprite(bg_asset, (0,0))
-
+        SpaceShip((100,100))
+        SpaceShip((150,150))
+        SpaceShip((200,50))
+        
 myapp = SpaceGame(SCREEN_WIDTH, SCREEN_HEIGHT)
 myapp.run()
-SpaceShip((100,100))
-SpaceShip((150,150))
-SpaceShip((200,50))
+
