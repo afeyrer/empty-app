@@ -15,18 +15,19 @@ y=0
 z=3
 snk=[(20,20)]
 dir=0
-
+go=True
 lineasset=RectangleAsset(1,100,line,blue)
 line=Sprite(lineasset, (400,50))
 
 def step():
     global z
     z=z+1
-    if z==4:
-        line.rotation=x
-        x=x+(3.14159/4)
-        print(x)
-        z=0
+    if go:
+        if z==4:
+            line.rotation=x
+            x=x+(3.14159/4)
+            print(x)
+            z=0
         
 myapp = App(SCREEN_WIDTH, SCREEN_HEIGHT)
 myapp.run(step)
