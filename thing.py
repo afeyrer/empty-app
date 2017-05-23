@@ -10,24 +10,31 @@ line=LineStyle(0,blue)
 black = Color(0, 1)
 bg_asset = RectangleAsset(SCREEN_WIDTH, SCREEN_HEIGHT, line, black)
 bg = Sprite(bg_asset, (0,0))
-x=20
-y=0
-z=3
-snk=[(20,20)]
-dir=0
+pi=3.14159
 go=True
 lineasset=RectangleAsset(1,100,line,blue)
-line=Sprite(lineasset, (3,4))
-line=Sprite(lineasset, (400,100))
+circle=[Sprite(lineasset, (400,100)), Sprite(lineasset, (400,100)), Sprite(lineasset, (400,100)), Sprite(lineasset, (400,100)), Sprite(lineasset, (400,100)), Sprite(lineasset, (400,100)), Sprite(lineasset, (400,100)), Sprite(lineasset, (400,100)),Sprite(lineasset, (400,100)), Sprite(lineasset, (400,100)), Sprite(lineasset, (400,100)), Sprite(lineasset, (400,100)), Sprite(lineasset, (400,100)), Sprite(lineasset, (400,100)), Sprite(lineasset, (400,100)), Sprite(lineasset, (400,100))]
+circle[1].rotation=pi/8
+circle[2].rotation=pi/4
+circle[3].rotation=pi*3/8
+circle[4].rotation=pi/2
+circle[5].rotation=pi*5/8
+circle[6].rotation=pi*3/4
+circle[7].rotation=pi*7/8
+circle[8].rotation=pi
+circle[9].rotation=pi*9/8
+circle[10].rotation=pi*5/4
+circle[11].rotation=pi*11/8
+circle[12].rotation=pi*3/2
+circle[13].rotation=pi*13/8
+circle[14].rotation=pi*7/4
+circle[15].rotation=pi*15/8
 
 def step():
-    global z
-    z=z+1
-    if go:
-        if z==4:
-            line.rotation=line.rotation+3.14/16
-            line.x+=4
-            z=0
+    for x in circle:
+        x.rotation+=pi/64
+        x.y+=.5
+
         
 myapp = App(SCREEN_WIDTH, SCREEN_HEIGHT)
 myapp.run(step)
