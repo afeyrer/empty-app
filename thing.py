@@ -17,16 +17,16 @@ snk=[(20,20)]
 dir=0
 go=True
 lineasset=RectangleAsset(1,100,line,blue)
-line=Sprite(lineasset, (400,50))
+line=Sprite(lineasset, (3,4))
+line=Sprite(lineasset, (400,100))
 
 def step():
     global z
     z=z+1
     if go:
         if z==4:
-            line.rotation=x
-            x=x+(3.14159/4)
-            print(x)
+            line.rotation=line.rotation+3.14/16
+            line.x+=4
             z=0
         
 myapp = App(SCREEN_WIDTH, SCREEN_HEIGHT)
