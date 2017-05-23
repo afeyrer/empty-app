@@ -30,10 +30,30 @@ circle[13].rotation=pi*13/8
 circle[14].rotation=pi*7/4
 circle[15].rotation=pi*15/8
 
+lineasset=RectangleAsset(1,50,line,purple)
+circles=[Sprite(lineasset, (200,100)), Sprite(lineasset, (200,100)), Sprite(lineasset, (200,100)), Sprite(lineasset, (200,100)), Sprite(lineasset, (200,100)), Sprite(lineasset, (200,100)), Sprite(lineasset, (200,100)), Sprite(lineasset, (200,100)),Sprite(lineasset, (200,100)), Sprite(lineasset, (200,100)), Sprite(lineasset, (200,100)), Sprite(lineasset, (200,100)), Sprite(lineasset, (200,100)), Sprite(lineasset, (200,100)), Sprite(lineasset, (200,100)), Sprite(lineasset, (200,100))]
+circles[1].rotation=pi/8
+circles[2].rotation=pi/4
+circles[3].rotation=pi*3/8
+circles[4].rotation=pi/2
+circles[5].rotation=pi*5/8
+circles[6].rotation=pi*3/4
+circles[7].rotation=pi*7/8
+circles[8].rotation=pi
+circles[9].rotation=pi*9/8
+circles[10].rotation=pi*5/4
+circles[11].rotation=pi*11/8
+circles[12].rotation=pi*3/2
+circles[13].rotation=pi*13/8
+circles[14].rotation=pi*7/4
+circles[15].rotation=pi*15/8
 def step():
     for x in circle:
         x.rotation+=pi/64
-        x.y+=.5
+        x.y+=1
+    for x in circles:
+        x.rotation+=pi/64
+        x.x+=1
 
         
 myapp = App(SCREEN_WIDTH, SCREEN_HEIGHT)
